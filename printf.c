@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * _printf - a custom printf function
+ * By: Sina
+ * @format: argument
+ * @...: another argument
+ */
+
 int _printf(const char *format, ...)
 {
 	va_list args;
@@ -42,6 +49,7 @@ int _printf(const char *format, ...)
 					{
 						char null_str = "(null)";
 						int j;
+
 						for (j = 0; null_str[j] != '\0'; j++)
 						{
 							_putchar(null_str[j]);
