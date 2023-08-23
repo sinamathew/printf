@@ -19,34 +19,11 @@ int _printf(const char *format, ...)
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
-		{
-			_putchar(format[i]);
-			printed_chars++;
-		}
+			printed_chars += _putchar(format[i]);
 		else
 		{
 			i++;
-
-			switch (format[i])
-			{
-				case 'c':
-					printed_chars += print_char(args);
-					break;
-				case 's':
-					printed_chars += print_string(args);
-					break;
-				case '%':
-					printed_chars += print_percent();
-					break;
-				case 'd':
-				case 'i':
-					printed_chars += print_integer(args);
-					break;
-
-				default:
-					printed_chars += handle_default(format[i]);
-					break;
-			}
+			printed_chars += handle_format(format[i], args);
 		}
 	}
 
