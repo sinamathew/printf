@@ -2,8 +2,9 @@
 
 /**
  * print_integer - prints out integer
- * @n: integer to prints
+ * @args: integer to prints
  * By: Sina Mathew
+ * Return: printed_chars
  */
 
 int print_integer(va_list args)
