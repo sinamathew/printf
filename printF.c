@@ -38,6 +38,10 @@ int _printf(const char *format, ...)
 				case '%':
 					printed_chars += print_percent();
 					break;
+				case 'd':
+				case 'i':
+					printed_chars += print_integer(args);
+					break;
 
 				default:
 					printed_chars += handle_default(format[i]);
